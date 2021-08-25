@@ -45,7 +45,16 @@ textarea {
 }
 
 textarea:focus {
-  outline: none;
+  outline: 0;
+}
+
+textarea::-webkit-scrollbar {
+  width: 7px;
+}
+
+textarea::-webkit-scrollbar-thumb {
+  background-color: #c2c2c299;
+  border-radius: 3px;
 }
 
 iframe {
