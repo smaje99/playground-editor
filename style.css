@@ -1,21 +1,56 @@
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
 body {
-
+  width: 100vw;
+  height: 100vh;
 }
 
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-#html,
-#js,
-#css {
-  background-color: #f1f1f1;
-  color: #333;
-  font-family: 'JetBrains Mono', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  font-size: 14px;
-  line-height: 1.42857143;
+section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  width: 100%;
+  height: 100%;
   margin: 0;
   padding: 0;
+  border: 0;
+}
+
+div {
+  display: flex;
+  flex-direction: column;
+}
+
+label, textarea {
+  background-color: #333;
+  color: #E3DAC9;
+  font-family: 'JetBrains Mono', monospace;
+}
+
+label {
+  font-size: 16px;
+  padding: 5px;
+}
+
+textarea {
+  width: 100%;
+  height: 100%;
+  font-size: 14px;
+  line-height: 1.69857143;
+  border: 0;
+  padding-left: 5px;
+}
+
+textarea:focus {
+  outline: none;
+}
+
+iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  background-color: #fff;
 }
