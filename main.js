@@ -8,7 +8,7 @@ const createHTML = () => {
   const html = $html.value;
   const css = $css.value;
   const js = $js.value;
-  
+
   return `
   <!DOCTYPE html>
   <html lang="en">
@@ -28,7 +28,7 @@ const createHTML = () => {
 
 const update = () => {
   const html = createHTML();
-  $('iframe').setAttribute('srcdoc', html);
+  $('.playground').setAttribute('srcdoc', html);
 }
 
 $js.addEventListener('input', update);
