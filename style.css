@@ -1,3 +1,9 @@
+@font-face {
+  font-family: 'JetBrains Mono';
+  src: url('./assets/fonts/JetBrainsMono-Regular.ttf')
+       format('truetype');
+}
+
 * {
   margin: 0;
   box-sizing: border-box;
