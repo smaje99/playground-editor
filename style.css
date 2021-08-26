@@ -70,15 +70,15 @@ body {
   border-radius: 3px;
 }
 
-.html {
+#html {
   background-image: url('./assets/img/html5.svg');
 }
 
-.js {
+#js {
   background-image: url('./assets/img/js.svg');
 }
 
-.css {
+#css {
   background-image: url('./assets/img/css3.svg');
 }
 
