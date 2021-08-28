@@ -1,3 +1,5 @@
+import { encode, decode } from 'js-base64';
+
 const $ = selector => document.querySelector(selector);
 
 const $js = $('#js');
@@ -28,7 +30,7 @@ const update = () => {
   const css = $css.value;
 
   // Base64 encryption of editors content
-  const hashedCode = `${window.btoa(html)}|${window.btoa(js)}|${window.btoa(css)}`;
+  const hashedCode = `${encode(html)}|${encode(js)}|${encode(css)}`;
 
   // URL modification
   window.history.replaceState(null, null, `/${hashedCode}`);
@@ -42,7 +44,7 @@ const init = () => {
 
   const [html, js, css] = pathname.slice(1)
                                   .split(encodeURI('|'))
-                                  .map(content => window.atob(content));
+                                  .map(content => decode(content));
   $html.value = html;
   $js.value = js;
   $css.value = css;
