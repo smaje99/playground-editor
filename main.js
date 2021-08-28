@@ -37,6 +37,22 @@ const update = () => {
   $('.playground').setAttribute('srcdoc', htmlForPreview);
 }
 
+const init = () => {
+  const { pathname } = window.location;
+
+  const [html, js, css] = pathname.slice(1)
+                                  .split(encodeURI('|'))
+                                  .map(content => window.atob(content));
+  $html.value = html;
+  $js.value = js;
+  $css.value = css;
+
+  const htmlForPreview = createHTML({ html, js, css });
+  $('.playground').setAttribute('srcdoc', htmlForPreview);
+}
+
 $js.addEventListener('input', update);
 $css.addEventListener('input', update);
 $html.addEventListener('input', update);
+
+init();
