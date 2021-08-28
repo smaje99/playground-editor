@@ -4,31 +4,37 @@ const $js = $('#js');
 const $css = $('#css');
 const $html = $('#html');
 
-const createHTML = () => {
-  const html = $html.value;
-  const css = $css.value;
-  const js = $js.value;
-
+const createHTML = ({ html, js, css }) => {
   return `
-  <!DOCTYPE html>
-  <html lang="en">
-  <head>
+<!DOCTYPE html>
+<html lang="en">
+<head>
   <style>
-  ${css}
+    ${css}
   </style>
-  </head>
-  <body>
+</head>
+<body>
   ${html}
   <script>
-  ${js}
+    ${js}
   </script>
-  </body>
-  </html>`
+</body>
+</html>`
 }
 
 const update = () => {
-  const html = createHTML();
-  $('.playground').setAttribute('srcdoc', html);
+  const html = $html.value;
+  const js = $js.value;
+  const css = $css.value;
+
+  // Base64 encryption of editors content
+  const hashedCode = `${window.btoa(html)}|${window.btoa(js)}|${window.btoa(css)}`;
+
+  // URL modification
+  window.history.replaceState(null, null, `/${hashedCode}`);
+
+  const htmlForPreview = createHTML({ html, js, css });
+  $('.playground').setAttribute('srcdoc', htmlForPreview);
 }
 
 $js.addEventListener('input', update);
