@@ -4,6 +4,8 @@ import HtmlWorker from 'monaco-editor/esm/vs/language/html/html.worker?worker';
 
 import { $ } from './utils/dom.js';
 
+import './split.js';
+
 window.MonacoEnvironment = {
   getWorker(_, label) {
     if (label === 'html') return new HtmlWorker();
