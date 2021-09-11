@@ -14,6 +14,12 @@ const $js = $('#js');
 const $css = $('#css');
 const $html = $('#html');
 
+const htmlEditor = monaco.editor.create($html, {
+  value: '',
+  language: 'html',
+  theme: 'vs-dark'
+});
+
 const createHTML = ({ html, js, css }) => {
   return `
 <!DOCTYPE html>
@@ -63,6 +69,6 @@ const init = () => {
 
 $js.addEventListener('input', update);
 $css.addEventListener('input', update);
-$html.addEventListener('input', update);
+htmlEditor.onDidChangeModelContent(update);
 
 init();
