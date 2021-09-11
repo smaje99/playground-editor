@@ -2,13 +2,13 @@ import { encode, decode } from 'js-base64';
 import * as monaco from 'monaco-editor';
 import HtmlWorker from 'monaco-editor/esm/vs/language/html/html.worker?worker';
 
+import { $ } from './utils/dom.js';
+
 window.MonacoEnvironment = {
   getWorker(_, label) {
     if (label === 'html') return new HtmlWorker();
   }
 }
-
-const $ = selector => document.querySelector(selector);
 
 const $js = $('#js');
 const $css = $('#css');

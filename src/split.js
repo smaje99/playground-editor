@@ -1,6 +1,5 @@
 import Split from 'split-grid';
-
-const $ = selector => document.querySelector(selector);
+import { $ } from './utils/dom.js';
 
 Split({
     columnGutters: [{
