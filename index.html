@@ -7,15 +7,16 @@
     <link rel="stylesheet" href="style.css">
   </head>
   <body>
-    <section class="playground-content">
-      <div editor="html"></div>
-      <textarea id="js" class="editor" placeholder="Javascript"></textarea>
-      <textarea id="css" class="editor" placeholder="CSS"></textarea>
+    <div class="playground-content">
+      <div id="html" class="editor"></div>
+      <div id="js" class="editor"></div>
+      <div id="css" class="editor"></div>
+
       <iframe class="playground" title="Playground"></iframe>
-      <div class="horizontal-gutter"></div>
+
       <div class="vertical-gutter"></div>
-    </section>
-    <script type="module" src="main.js"></script>
-    <script type="module" src="split.js"></script>
+      <div class="horizontal-gutter"></div>
+    </div>
+    <script type="module" src="/src/main.js"></script>
   </body>
 </html>
