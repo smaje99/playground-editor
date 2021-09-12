@@ -6,6 +6,7 @@ import JsWorker from 'monaco-editor/esm/vs/language/typescript/ts.worker?worker'
 const COMMON_EDITOR_OPTIONS = {
     fontFamily: 'JetBrains Mono',
     theme: 'vs-dark',
+    automaticLayout: true,
     padding: {
         top: 16
     }
