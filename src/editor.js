@@ -7,6 +7,9 @@ const COMMON_EDITOR_OPTIONS = {
     fontFamily: 'JetBrains Mono',
     theme: 'vs-dark',
     automaticLayout: true,
+    minimap: {
+        enabled: false
+    },
     padding: {
         top: 16
     }
