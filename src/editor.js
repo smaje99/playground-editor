@@ -12,11 +12,15 @@ const COMMON_EDITOR_OPTIONS = {
     }
 }
 
+const workers = {
+    'html': () => new HtmlWorker(),
+    'javascript': () => new JsWorker(),
+    'css': () => new CssWorker()
+}
+
 window.MonacoEnvironment = {
     getWorker (_, label) {
-        if (label === 'html') return new HtmlWorker();
-        if (label === 'javascript') return new JsWorker();
-        if (label === 'css') return new CssWorker();
+        return workers[label];
     }
 }
 
